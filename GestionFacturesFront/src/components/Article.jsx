@@ -64,13 +64,16 @@ const ArticleManager = () => {
         <header className="header">
           <div className="container">
             <h3>Liste des articles ({articles.length})</h3>
-            <Button
-              variant="primary"
-              className="mb-3 float-right"
-              onClick={handleAddClick}
-            >
-              <i className="bi bi-plus-circle"></i> Ajouter Article
-            </Button>
+            <div className="container">
+              <Button
+                variant="primary"
+                className="mb-3 "
+                style={{ float: "right" }}
+                onClick={handleAddClick}
+              >
+                <i className="bi bi-plus-circle"></i> Ajouter Article
+              </Button>
+            </div>
           </div>
         </header>
         <div>
