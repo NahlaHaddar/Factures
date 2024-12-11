@@ -11,5 +11,8 @@ export async function getArticles() {
 }
 
 export async function updateArticle(article) {
-  return await axios.post(`${appUrl}/nouvelArticle`, article);
+  console.log(article.prixUnitaire);
+  return await axios.put(
+    `${appUrl}/${article.id}?nom=${article.nom}&prixUnitaire=${article.prixUnitaire}`
+  );
 }

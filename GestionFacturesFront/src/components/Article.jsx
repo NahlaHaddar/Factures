@@ -2,7 +2,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import React, { useState, useEffect } from "react";
 import { Table, Button, Modal, Form } from "react-bootstrap";
-
 import { getArticles, saveArticle, updateArticle } from "../api/ArticleService";
 
 const ArticleManager = () => {
@@ -124,7 +123,12 @@ const ArticleManager = () => {
                   <Form.Control
                     type="text"
                     value={articleCourant.nom}
-                    readOnly
+                    onChange={(e) =>
+                      setArticleCourant({
+                        ...articleCourant,
+                        nom: e.target.value,
+                      })
+                    }
                   />
                 </Form.Group>
                 <Form.Group controlId="formPrice">
